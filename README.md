@@ -15,7 +15,7 @@ Next.js 14 (App Router) + TypeScript + Tailwind CSS + Supabase + Stripe + Resend
    - it-courses.zip
    - kids-center.zip
    - tutor.zip
-6. Настрой Stripe Webhook на /api/webhook
+6. Настрой Stripeё Webhook на /api/webhook
    Событие: checkout.session.completed
 7. npm run dev
 
