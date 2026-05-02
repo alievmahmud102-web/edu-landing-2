@@ -12,14 +12,6 @@ export type Template = {
   category: string;
 };
 
-export type Review = {
-  id: string;
-  name: string;
-  role: string;
-  text: string;
-  rating: number;
-};
-
 export type Order = {
   order_id: string;
   email: string;

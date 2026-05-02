@@ -1,4 +1,5 @@
 import { CatalogGrid } from "@/components/sections/CatalogGrid";
+import { ContactForm } from "@/components/sections/ContactForm";
 import { FAQ } from "@/components/sections/FAQ";
 import { Features } from "@/components/sections/Features";
 import { Hero } from "@/components/sections/Hero";
@@ -13,6 +14,7 @@ export default function HomePage() {
       <CatalogGrid templates={templates} />
       <Testimonials />
       <FAQ />
+      <ContactForm />
     </div>
   );
 }

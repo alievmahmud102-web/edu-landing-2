@@ -1,6 +1,11 @@
+"use client";
+
 import { Button } from "@/components/ui/Button";
+import { useI18n } from "@/components/I18nProvider";
 
 export default function NotFoundPage() {
+  const { t } = useI18n();
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-6 text-center bg-white">
       <svg
@@ -20,12 +25,10 @@ export default function NotFoundPage() {
         />
         <circle cx="12" cy="16.5" r="0.9" fill="currentColor" />
       </svg>
-      <h1 className="mb-3 text-2xl font-bold text-gray-900">404 — Страница не найдена</h1>
-      <p className="mb-8 text-gray-500">
-        Возможно, ссылка устарела или страница программы была перемещена.
-      </p>
+      <h1 className="mb-3 text-2xl font-bold text-gray-900">{t("not_found_title")}</h1>
+      <p className="mb-8 text-gray-500">{t("not_found_body")}</p>
       <Button variant="primary" href="/">
-        Вернуться к программам
+        {t("not_found_cta")}
       </Button>
     </div>
   );

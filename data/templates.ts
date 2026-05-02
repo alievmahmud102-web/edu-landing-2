@@ -3,107 +3,107 @@ import type { Template } from "@/types";
 export const templates: Template[] = [
   {
     id: "1",
-    slug: "ege-center",
-    title: "ЕГЭ Профиль: 10-11 класс",
+    slug: "beginner-english",
+    title: "Beginner English",
     description:
-      "Годовая программа для уверенной сдачи ЕГЭ с акцентом на практику, разбор заданий второй части и персональную стратегию на экзамене.",
+      "A friendly start for children who are new to English or need a solid foundation. We build vocabulary, listening, and simple speaking through games and short dialogues.",
     price: 150,
     displayPrice: "$150",
     oldPrice: "$190",
-    badge: "Популярно",
+    badge: "Popular",
     demoUrl: "",
     features: [
-      "8 занятий в месяц в мини-группе",
-      "Персональный трек по слабым темам",
-      "Еженедельные пробники и разбор ошибок",
-      "Отчеты родителям по успеваемости",
-      "Кураторская поддержка в чате",
-      "Подготовка к реальному формату экзамена"
+      "Small groups with lots of speaking time",
+      "Clear levels from first words to short stories",
+      "Weekly progress notes for parents",
+      "Online or in-person options",
+      "No rote memorization — we learn by doing",
+      "Supportive teachers trained for ages 6–16"
     ],
-    category: "ЕГЭ"
+    category: "Beginner"
   },
   {
     id: "2",
-    slug: "language-school",
-    title: "Английский Academic",
+    slug: "speaking-english",
+    title: "Speaking English",
     description:
-      "Программа для школьников и студентов, которым нужен уверенный академический английский для учебы, экзаменов и международных программ.",
+      "Confidence-first course focused on real conversation: role-plays, discussions, and pronunciation so your child can use English naturally in daily situations.",
     price: 150,
     displayPrice: "$150",
     oldPrice: "$180",
-    badge: "Топ",
+    badge: "Top pick",
     demoUrl: "",
     features: [
-      "Уровни от A2 до C1",
-      "Разговорная практика каждую неделю",
-      "Системная грамматика и письмо",
-      "Подготовка к IELTS и SAT English",
-      "Мини-группы до 6 человек",
-      "Доступ к цифровым материалам"
+      "Speaking in every lesson",
+      "Pronunciation and fluency drills",
+      "Themed projects and mini-presentations",
+      "Peer practice in small groups",
+      "Teacher feedback after each class",
+      "Materials matched to your child’s level"
     ],
-    category: "Английский"
+    category: "Speaking"
   },
   {
     id: "3",
-    slug: "it-courses",
-    title: "Математика + Физика",
+    slug: "ielts-preparation",
+    title: "IELTS Preparation",
     description:
-      "Интенсивная связка двух ключевых предметов для тех, кто готовится к техническим специальностям и хочет усилить базу за один учебный цикл.",
+      "Structured preparation for older students targeting IELTS or similar exams. We balance all four skills with exam strategies and timed practice.",
     price: 150,
     displayPrice: "$150",
     oldPrice: "$200",
     badge: null,
     demoUrl: "",
     features: [
-      "2 предмета в одном расписании",
-      "Акцент на задачах повышенной сложности",
-      "Подготовка к олимпиадам и экзаменам",
-      "Разбор типичных ошибок на контрольных",
-      "Домашние задания с обратной связью",
-      "Промежуточная аттестация каждый месяц"
+      "Diagnostic test and score roadmap",
+      "Academic and general training tracks",
+      "Writing and speaking with detailed feedback",
+      "Full mock tests with review sessions",
+      "Exam techniques and time management",
+      "Small groups or one-on-one add-on"
     ],
-    category: "Точные науки"
+    category: "Exams"
   },
   {
     id: "4",
-    slug: "kids-center",
-    title: "Middle School Boost (5-8 класс)",
+    slug: "school-support-english",
+    title: "School Support English",
     description:
-      "Комплексная программа для среднего звена: подтягиваем школьные пробелы, развиваем учебные навыки и формируем устойчивую мотивацию к обучению.",
+      "Helps learners keep up with school English, homework, and tests while building stronger speaking alongside the curriculum.",
     price: 150,
     displayPrice: "$150",
     oldPrice: "$170",
     badge: null,
     demoUrl: "",
     features: [
-      "Математика, русский и английский",
-      "Формирование навыков самостоятельной учебы",
-      "Индивидуальные рекомендации родителям",
-      "Еженедельный контроль прогресса",
-      "Поддержка кураторов и преподавателей",
-      "Гибкое расписание по будням и выходным"
+      "Aligned with typical school programs",
+      "Grammar and vocabulary made clear",
+      "Test and project preparation",
+      "Extra speaking to go beyond the textbook",
+      "Regular check-ins with parents",
+      "Flexible schedule on weekdays or weekends"
     ],
-    category: "Средняя школа"
+    category: "School support"
   },
   {
     id: "5",
-    slug: "tutor",
-    title: "Индивидуальный менторинг",
+    slug: "one-on-one-lessons",
+    title: "One-on-one lessons",
     description:
-      "Персональный формат обучения с наставником: точечно закрываем пробелы, готовим к экзаменам и сопровождаем до достижения поставленной цели.",
+      "Fully personalized lessons for faster progress or specific goals — from catching up to intensive exam prep, with a plan built around your child.",
     price: 150,
     displayPrice: "$150",
     oldPrice: "$220",
     badge: null,
     demoUrl: "",
     features: [
-      "1:1 формат с персональным планом",
-      "Гибкий график занятий",
-      "Еженедельные срезы знаний",
-      "Разбор домашних заданий в реальном времени",
-      "Подготовка к вступительным испытаниям",
-      "Фокус на быстрый измеримый результат"
+      "Custom plan after a diagnostic lesson",
+      "Flexible booking with your teacher",
+      "100% attention on your child’s needs",
+      "Fast feedback on homework and speaking",
+      "Optional focus on IELTS or school exams",
+      "Online or in-person available"
     ],
-    category: "Менторинг"
+    category: "Private"
   }
 ];

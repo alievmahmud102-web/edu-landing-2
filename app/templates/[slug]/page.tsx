@@ -1,35 +1,50 @@
-import { notFound } from "next/navigation";
+"use client";
+
+import { notFound, useParams } from "next/navigation";
+
 import { templates } from "@/data/templates";
+import { programKey } from "@/config/i18n";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { useI18n } from "@/components/I18nProvider";
 import { BuyForm } from "./BuyForm";
 
-type TemplatePageProps = {
-  params: {
-    slug: string;
-  };
-};
+const FEATURE_COUNT = 6;
 
-export default function TemplatePage({ params }: TemplatePageProps) {
-  const template = templates.find((item) => item.slug === params.slug);
+export default function TemplatePage() {
+  const params = useParams();
+  const slug = typeof params?.slug === "string" ? params.slug : "";
+  const template = templates.find((item) => item.slug === slug);
+  const { t } = useI18n();
 
   if (!template) {
     notFound();
   }
 
+  const title = t(programKey(template.slug, "title"));
+  const description = t(programKey(template.slug, "description"));
+  const badgeText = t(programKey(template.slug, "badge")).trim();
+  const features = Array.from({ length: FEATURE_COUNT }, (_, i) =>
+    t(programKey(template.slug, `feature_${i}`))
+  );
+
   return (
     <div className="mx-auto max-w-5xl px-6 py-16">
       <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
         <div>
-          {template.badge ? <div className="mb-4"><Badge>{template.badge}</Badge></div> : null}
-          <h1 className="mb-4 text-3xl font-bold text-gray-900">{template.title}</h1>
-          <p className="mb-8 leading-relaxed text-gray-500">{template.description}</p>
+          {badgeText ? (
+            <div className="mb-4">
+              <Badge>{badgeText}</Badge>
+            </div>
+          ) : null}
+          <h1 className="mb-4 text-3xl font-bold text-gray-900">{title}</h1>
+          <p className="mb-8 leading-relaxed text-gray-500">{description}</p>
 
-          <h2 className="mb-4 font-semibold text-gray-900">Что входит в программу</h2>
+          <h2 className="mb-4 font-semibold text-gray-900">{t("template_what_included")}</h2>
           <ul className="space-y-3">
-            {template.features.map((feature) => (
-              <li key={feature} className="flex items-start gap-3">
+            {features.map((feature, index) => (
+              <li key={index} className="flex items-start gap-3">
                 <svg
                   className="mt-0.5 h-5 w-5 flex-shrink-0 text-blue-600"
                   viewBox="0 0 24 24"
@@ -61,9 +76,7 @@ export default function TemplatePage({ params }: TemplatePageProps) {
               ) : null}
               <span className="text-4xl font-bold text-gray-900">{template.displayPrice}</span>
             </div>
-            <p className="mb-6 mt-2 text-sm text-gray-400">
-              Стоимость за месяц обучения. Без скрытых платежей.
-            </p>
+            <p className="mb-6 mt-2 text-sm text-gray-400">{t("template_monthly_note")}</p>
             <hr className="mb-6 border-gray-100" />
 
             <BuyForm slug={template.slug} displayPrice={template.displayPrice} />
@@ -79,7 +92,7 @@ export default function TemplatePage({ params }: TemplatePageProps) {
                 rel="noopener noreferrer"
                 className="w-full"
               >
-                Посмотреть программу →
+                {t("template_syllabus_btn")}
               </Button>
             ) : (
               <button
@@ -87,7 +100,7 @@ export default function TemplatePage({ params }: TemplatePageProps) {
                 disabled
                 className="w-full cursor-not-allowed rounded-lg border border-dashed border-gray-200 py-3 text-center text-sm text-gray-400"
               >
-                Подробная программа скоро появится
+                {t("template_syllabus_soon")}
               </button>
             )}
 
@@ -108,10 +121,10 @@ export default function TemplatePage({ params }: TemplatePageProps) {
                 />
               </svg>
               <div>
-                <p className="text-sm font-medium text-gray-900">Пробный период 7 дней</p>
-                <p className="text-sm text-gray-400">
-                  Если формат не подойдет, поможем сменить группу или вернем оплату.
+                <p className="text-sm font-medium text-gray-900">
+                  {t("template_satisfaction_title")}
                 </p>
+                <p className="text-sm text-gray-400">{t("template_satisfaction_body")}</p>
               </div>
             </div>
           </Card>
