@@ -1,64 +1,64 @@
+import { ChevronDown } from "lucide-react";
+
 const faqItems = [
   {
-    question: "Смогу ли я сам установить шаблон?",
+    question: "Какой формат занятий доступен в центре?",
     answer:
-      "Да. Внутри ZIP-архива есть пошаговая инструкция по установке. Среднее время установки — 15–30 минут даже без опыта."
+      "Доступны очные и онлайн-занятия: мини-группы до 8 человек, индивидуальные уроки и интенсивные курсы перед экзаменами."
   },
   {
-    question: "Что именно я получу после оплаты?",
+    question: "Как проходит старт обучения?",
     answer:
-      "ZIP-архив с готовым шаблоном сайта, инструкцией по установке и настройке. Ссылка придёт на email и будет доступна на странице сразу после оплаты."
+      "Сначала проводим диагностику знаний, затем подбираем преподавателя и отправляем персональный план с графиком, целями и домашними заданиями."
   },
   {
-    question: "Есть ли гарантия возврата?",
+    question: "Сколько стоит обучение?",
     answer:
-      "Да, 7 дней с момента покупки. Если шаблон не подошёл — напишите на support@edutemplates.com и мы вернём деньги без лишних вопросов."
+      "Базовые программы начинаются от $150 в месяц. Финальная стоимость зависит от формата, количества занятий и выбранного направления."
   },
   {
-    question: "На каком движке сделаны шаблоны?",
+    question: "Какие предметы и направления вы ведете?",
     answer:
-      "Шаблоны сделаны на чистом HTML/CSS/JS. Вы можете разместить их на любом хостинге без необходимости устанавливать CMS или базу данных."
+      "Готовим по математике, русскому, английскому, физике, информатике, а также ведем курсы по IELTS, SAT и олимпиадным дисциплинам."
   },
   {
-    question: "Могу ли я адаптировать шаблон под свой бренд?",
+    question: "Как вы контролируете прогресс ученика?",
     answer:
-      "Да, шаблон полностью ваш после покупки. Меняйте цвета, тексты, изображения и структуру как угодно."
+      "После каждого модуля проводим контрольные срезы, даем отчеты родителям и ежемесячно корректируем учебный маршрут по результатам."
   },
   {
-    question: "Есть ли поддержка после покупки?",
+    question: "Есть ли пробное занятие?",
     answer:
-      "Да. По вопросам установки и настройки пишите на support@edutemplates.com. Отвечаем в течение 24 часов."
+      "Да, первое диагностическое занятие можно пройти в пробном формате, чтобы познакомиться с преподавателем и методикой центра."
   }
 ];
 
 export function FAQ() {
   return (
     <section className="bg-white px-6 py-20">
-      <h2 className="mb-16 text-center text-3xl font-bold text-gray-900">
-        Частые вопросы
+      <h2 className="mb-16 text-center text-3xl font-bold text-slate-900">
+        Вопросы по обучению
       </h2>
-      <div className="mx-auto max-w-2xl space-y-4">
+      <div className="mx-auto max-w-2xl space-y-5">
         {faqItems.map((item) => (
-          <details key={item.question} className="overflow-hidden rounded-lg border border-gray-100">
-            <summary className="flex list-none items-center justify-between cursor-pointer px-6 py-4 font-medium text-gray-900 transition-colors hover:bg-gray-50">
+          <details
+            key={item.question}
+            className="group overflow-hidden rounded-xl border border-slate-200 bg-white transition-all duration-200 hover:bg-slate-50 hover:shadow-md"
+          >
+            <summary className="flex list-none items-center justify-between cursor-pointer px-6 py-4 font-medium text-slate-900 outline-none transition-colors [&::-webkit-details-marker]:hidden">
               <span>{item.question}</span>
-              <span className="faq-plus">+</span>
-              <span className="faq-minus hidden">−</span>
+              <ChevronDown className="h-5 w-5 shrink-0 text-slate-400 transition-transform duration-200 group-open:rotate-180" />
             </summary>
-            <div className="border-t border-gray-100 px-6 py-4 text-sm leading-relaxed text-gray-500">
-              {item.answer}
+            <div className="grid grid-rows-[0fr] transition-all duration-200 group-open:grid-rows-[1fr]">
+              <div className="overflow-hidden">
+                <div className="border-t border-slate-200 px-6 py-4 text-sm leading-relaxed text-slate-600">
+                  {item.answer}
+                </div>
+              </div>
             </div>
           </details>
         ))}
       </div>
-      <style>{`
-        details[open] summary .faq-plus {
-          display: none;
-        }
-        details[open] summary .faq-minus {
-          display: inline;
-        }
-      `}</style>
     </section>
   );
 }

@@ -1,40 +1,58 @@
+import { BadgeCheck, Download, DollarSign, LayoutTemplate, Star } from "lucide-react";
+
 import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
-    <section className="bg-white px-6 py-24">
+    <section className="relative overflow-hidden bg-white px-6 py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
+      >
+        <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-[140%] rounded-full bg-blue-100/70 blur-3xl" />
+        <div className="absolute left-1/2 top-8 h-80 w-80 -translate-x-1/2 rounded-full bg-sky-100/60 blur-3xl" />
+        <div className="absolute right-0 top-16 h-72 w-72 -translate-x-1/4 rounded-full bg-indigo-100/60 blur-3xl" />
+        <div className="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_60%)]" />
+      </div>
       <div className="mx-auto max-w-4xl text-center">
-        <span className="mb-6 block text-sm font-medium text-blue-600">
-          ⭐ Более 120 школ и репетиторов уже запустили сайт
+        <span className="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-50/80 px-4 py-2 text-sm font-medium text-blue-600 ring-1 ring-blue-100 backdrop-blur-sm">
+          <Star className="h-4 w-4" />
+          1 200+ учеников уже обучаются в нашем центре
         </span>
-        <h1 className="mb-6 text-4xl font-bold leading-tight text-gray-900 md:text-5xl">
-          Готовый сайт для вашей школы или курсов — за 15 минут
+        <h1 className="mb-6 text-4xl font-bold leading-[1.05] text-gray-900 md:text-5xl">
+          Учебный центр с сильной академической программой и результатом
         </h1>
-        <p className="mx-auto mb-10 max-w-2xl text-xl text-gray-500">
-          Профессиональные шаблоны для репетиторов, языковых школ и учебных
-          центров. Купите, скачайте ZIP-архив и запустите сайт сегодня — без
-          разработчика и дизайнера.
+        <p className="mx-auto mb-10 max-w-2xl text-xl leading-8 text-gray-500">
+          Готовим к ЕГЭ и международным экзаменам, усиливаем школьную базу и
+          помогаем поступить в сильные вузы. Занятия в мини-группах, персональный
+          трекинг прогресса и поддержка кураторов на каждом этапе.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button variant="primary" size="lg" href="/#catalog">
-            Смотреть шаблоны
+            <span className="inline-flex items-center gap-2">
+              <LayoutTemplate className="h-5 w-5" />
+              Выбрать программу
+            </span>
           </Button>
           <Button variant="outline" size="lg" href="/#how">
-            Как это работает
+            <span className="inline-flex items-center gap-2">
+              <BadgeCheck className="h-5 w-5" />
+              Как проходит обучение
+            </span>
           </Button>
         </div>
         <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-gray-500">
           <div className="flex items-center gap-2">
-            <span className="text-blue-600">◆</span>
-            <span>5 шаблонов</span>
+            <LayoutTemplate className="h-4 w-4 text-blue-600" />
+            <span>5 направлений подготовки</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-blue-600">$</span>
-            <span>От $29</span>
+            <DollarSign className="h-4 w-4 text-blue-600" />
+            <span>Стоимость от $150</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-blue-600">⬇</span>
-            <span>ZIP + инструкция</span>
+            <Download className="h-4 w-4 text-blue-600" />
+            <span>Материалы и план обучения</span>
           </div>
         </div>
       </div>

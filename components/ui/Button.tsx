@@ -12,10 +12,11 @@ type ButtonProps = {
 };
 
 const variantClasses: Record<NonNullable<ButtonProps["variant"]>, string> = {
-  primary: "bg-blue-600 hover:bg-blue-700 text-white",
+  primary:
+    "bg-blue-600 text-white shadow-md shadow-blue-500/20 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/25",
   secondary: "bg-gray-100 hover:bg-gray-200 text-gray-900",
   outline:
-    "border border-gray-300 hover:border-blue-600 hover:text-blue-600 text-gray-700"
+    "border border-gray-300 bg-white/80 text-gray-700 hover:border-blue-600 hover:bg-blue-50 hover:text-blue-600"
 };
 
 const sizeClasses: Record<NonNullable<ButtonProps["size"]>, string> = {
@@ -37,7 +38,7 @@ export function Button({
   rel
 }: ButtonProps) {
   const classes = [
-    "rounded-lg font-medium transition-colors inline-block text-center",
+    "inline-block rounded-xl text-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/40 focus-visible:ring-offset-2",
     variantClasses[variant],
     sizeClasses[size],
     disabled ? "opacity-50 cursor-not-allowed pointer-events-none" : "",

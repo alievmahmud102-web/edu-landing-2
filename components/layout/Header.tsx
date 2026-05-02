@@ -6,10 +6,10 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="text-xl font-bold text-gray-900">
-          EduTemplates
+          EduCenter Pro
         </Link>
         <Button variant="outline" size="sm" href="/#catalog">
-          Смотреть шаблоны
+          $150
         </Button>
       </div>
     </header>

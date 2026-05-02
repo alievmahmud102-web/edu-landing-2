@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { CheckCircle2, LayoutTemplate } from "lucide-react";
+
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -15,47 +17,64 @@ export function CatalogGrid({ templates }: CatalogGridProps) {
   }
 
   return (
-    <section id="catalog" className="bg-gray-50 px-6 py-20">
-      <h2 className="mb-4 text-center text-3xl font-bold text-gray-900">
-        Шаблоны сайтов
+    <section id="catalog" className="bg-slate-50 px-6 py-20">
+      <h2 className="mb-4 text-center text-3xl font-bold text-slate-900">
+        Учебные программы
       </h2>
-      <p className="mb-16 text-center text-gray-500">
-        Выберите подходящий шаблон для вашего бизнеса
+      <p className="mb-16 text-center text-slate-500">
+        Подберите формат обучения под цель и уровень ученика
       </p>
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto flex max-w-6xl flex-wrap justify-center gap-6">
         {templates.map((template) => (
-          <Card key={template.id}>
-            <div className="mb-4 flex items-start justify-between gap-3">
-              <h3 className="font-semibold text-gray-900">
-                <Link href={`/templates/${template.slug}`}>{template.title}</Link>
-              </h3>
-              {template.badge ? <Badge>{template.badge}</Badge> : null}
+          <Card
+            key={template.id}
+            className="group w-full overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-0 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+          >
+            <div className="relative aspect-video overflow-hidden rounded-t-xl bg-gradient-to-br from-slate-100 via-slate-50 to-blue-100/50 shadow-inner">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.16),transparent_45%)]" />
+              <div className="absolute inset-x-4 top-4 h-8 rounded-md bg-white/70 shadow-sm backdrop-blur-sm" />
+              <div className="absolute inset-x-6 top-16 h-24 rounded-lg bg-white/75 shadow-sm backdrop-blur-sm transition-transform duration-500 group-hover:scale-[1.03]" />
+              <div className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-1 text-xs font-medium text-slate-600 backdrop-blur-sm">
+                <LayoutTemplate className="h-3.5 w-3.5 text-blue-600" />
+                Превью программы
+              </div>
             </div>
-            <p className="mb-4 text-sm leading-relaxed text-gray-500">
-              {truncate(template.description, 90)}
-            </p>
-            <ul className="mb-6 space-y-1 text-sm text-gray-500">
-              {template.features.slice(0, 3).map((feature) => (
-                <li key={feature}>✓ {feature}</li>
-              ))}
-            </ul>
-            <div className="mb-6 flex items-baseline gap-2">
-              {template.oldPrice ? (
-                <span className="text-sm text-gray-400 line-through">
-                  {template.oldPrice}
+            <div className="p-6">
+              <div className="mb-4 flex items-start justify-between gap-3">
+                <h3 className="font-semibold text-slate-900">
+                  <Link href={`/templates/${template.slug}`}>{template.title}</Link>
+                </h3>
+                {template.badge ? <Badge>{template.badge}</Badge> : null}
+              </div>
+              <p className="mb-4 text-sm leading-relaxed text-slate-600">
+                {truncate(template.description, 90)}
+              </p>
+              <ul className="mb-5 space-y-2 text-sm text-slate-600">
+                {template.features.slice(0, 3).map((feature) => (
+                  <li key={feature} className="flex items-start gap-2">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mb-5 flex items-end gap-2">
+                {template.oldPrice ? (
+                  <span className="text-sm text-slate-400 line-through">
+                    {template.oldPrice}
+                  </span>
+                ) : null}
+                <span className="text-3xl font-bold leading-none text-slate-950">
+                  {template.displayPrice}
                 </span>
-              ) : null}
-              <span className="text-2xl font-bold text-gray-900">
-                {template.displayPrice}
-              </span>
-            </div>
-            <div className="flex gap-3">
-              <Button variant="outline" size="sm" href={`/templates/${template.slug}`}>
-                Подробнее
-              </Button>
-              <Button variant="primary" size="sm" href={`/templates/${template.slug}`}>
-                Купить
-              </Button>
+              </div>
+              <div className="flex items-center gap-2">
+                <Button variant="outline" size="sm" href={`/templates/${template.slug}`}>
+                  О программе
+                </Button>
+                <Button variant="primary" size="sm" href={`/templates/${template.slug}`}>
+                  Записаться
+                </Button>
+              </div>
             </div>
           </Card>
         ))}

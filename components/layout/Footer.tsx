@@ -3,7 +3,7 @@ export function Footer() {
     <footer className="mt-auto border-t border-gray-100">
       <div className="mx-auto max-w-6xl px-6 py-8 text-center">
         <p className="text-sm text-gray-400">
-          © 2025 EduTemplates. Готовые сайты для образовательного бизнеса.
+          © 2025 EduCenter Pro. Современный учебный центр для школьников и студентов.
         </p>
       </div>
     </footer>

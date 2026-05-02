@@ -22,10 +22,10 @@ export default function NotFoundPage() {
       </svg>
       <h1 className="mb-3 text-2xl font-bold text-gray-900">404 — Страница не найдена</h1>
       <p className="mb-8 text-gray-500">
-        Возможно, страница была удалена или адрес введён неверно.
+        Возможно, ссылка устарела или страница программы была перемещена.
       </p>
       <Button variant="primary" href="/">
-        Вернуться на главную
+        Вернуться к программам
       </Button>
     </div>
   );

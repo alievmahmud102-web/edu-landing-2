@@ -8,8 +8,8 @@ import { Header } from "@/components/layout/Header";
 const inter = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
-  title: "EduTemplates",
-  description: "Готовые сайты для образовательного бизнеса"
+  title: "EduCenter Pro",
+  description: "Учебный центр с программами подготовки и сопровождением учеников"
 };
 
 type RootLayoutProps = {

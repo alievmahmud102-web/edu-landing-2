@@ -18,7 +18,7 @@ export function BuyForm({ slug, displayPrice }: BuyFormProps) {
 
   const handleBuy = async (): Promise<void> => {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError("Введите корректный email адрес");
+      setError("Введите корректный email");
       return;
     }
 
@@ -46,9 +46,9 @@ export function BuyForm({ slug, displayPrice }: BuyFormProps) {
         }
       }
 
-      setError("Что-то пошло не так. Попробуйте ещё раз.");
+      setError("Не удалось оформить заявку. Попробуйте еще раз.");
     } catch {
-      setError("Что-то пошло не так. Попробуйте ещё раз.");
+      setError("Не удалось оформить заявку. Попробуйте еще раз.");
     } finally {
       setIsLoading(false);
     }
@@ -58,7 +58,7 @@ export function BuyForm({ slug, displayPrice }: BuyFormProps) {
     <div className="flex flex-col gap-4">
       <div>
         <label className="mb-1 block text-sm font-medium text-gray-700" htmlFor="email">
-          Ваш email
+          Email для связи
         </label>
         <input
           id="email"
@@ -79,7 +79,7 @@ export function BuyForm({ slug, displayPrice }: BuyFormProps) {
         disabled={isLoading || email.trim() === ""}
         className="w-full rounded-lg bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
       >
-        {isLoading ? "Переход к оплате..." : `Купить за ${displayPrice}`}
+        {isLoading ? "Переход к оплате..." : `Записаться за ${displayPrice}`}
       </button>
     </div>
   );

@@ -10,7 +10,7 @@ export async function notifyAdmin(
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       chat_id: process.env.TELEGRAM_ADMIN_CHAT_ID,
-      text: `✅ Новая покупка!\nШаблон: ${templateTitle}\nПокупатель: ${email}\nСумма: ${amount}`
+      text: `✅ Новая заявка!\nПрограмма: ${templateTitle}\nКонтакт: ${email}\nСумма: ${amount}`
     })
   }
   );
